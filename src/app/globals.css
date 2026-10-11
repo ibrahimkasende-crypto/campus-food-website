@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff6f2;
+  --foreground: #1f2937;
+  --brand-primary: #d90416;
+  --brand-secondary: #ff6a00;
+  --brand-accent: #ffb000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply border border-white/60 bg-white/80 backdrop-blur-xl;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent;
+  }
+}

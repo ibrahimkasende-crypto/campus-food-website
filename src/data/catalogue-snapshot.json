@@ -1,0 +1,434 @@
+{
+  "generatedAt": "2026-10-11",
+  "rows": [
+    {
+      "id": "5a61e97f-9565-4664-9562-c58c26169138",
+      "name": "Beignet viande",
+      "description": "Beignet fourré à la viande",
+      "price_cdf": 2800,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/04cf5a05-bfb6-40c6-ad3b-4e076b8b8340/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "a1a7190a-9f63-44db-9bcb-02eb1adce638",
+      "name": "Beignets haricot",
+      "description": "Beignets de haricot, portion de 5",
+      "price_cdf": 2500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/914d1fb6-568d-4345-802b-97ffeffc6ae2/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "163f1065-f47a-41c3-b8a0-22ed9be061b4",
+      "name": "Beignets haricot",
+      "description": "Beignets de haricot, portion de 5",
+      "price_cdf": 2500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/914d1fb6-568d-4345-802b-97ffeffc6ae2/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "02deb266-0dad-41c5-a1d1-c0f2b475f093",
+      "name": "Brochette poulet",
+      "description": "Brochettes de poulet grillées",
+      "price_cdf": 5000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/597d35d1-7f31-410a-8057-ba83e7df0b1d/abcdb7a2-4bc2-4ad1-99f6-0ff0abf74616/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "773eace1-b575-46c5-a5a9-74495e408bb5",
+      "name": "Burger Arlo",
+      "description": "Burger bœuf, cheddar, salade et sauce maison",
+      "price_cdf": 7500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/256151c5-4969-4d09-97a2-4982c949d5cb/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "5e05125c-7194-4c30-80e5-3486dfdc70d7",
+      "name": "Café bunna",
+      "description": "Café noir local",
+      "price_cdf": 1500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/ce489ce6-8bdb-4fb4-81c0-2c61d67fe51a/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "c42dc71e-80ea-44b0-a6c0-32eaeab6a3f1",
+      "name": "Café bunna",
+      "description": "Café noir local",
+      "price_cdf": 1500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/ce489ce6-8bdb-4fb4-81c0-2c61d67fe51a/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "48f22cdb-6815-431f-a3be-09a32f691718",
+      "name": "Café bunna",
+      "description": "Café noir local",
+      "price_cdf": 1500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/ce489ce6-8bdb-4fb4-81c0-2c61d67fe51a/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "c82db30e-d157-4010-92af-d04975842865",
+      "name": "Chikwangue",
+      "description": "Chikwangue et sauce",
+      "price_cdf": 7000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/597d35d1-7f31-410a-8057-ba83e7df0b1d/34f82eec-ca95-4415-ae3e-cba2ad4ba9b8/main.webp",
+      "preparation_time_minutes": 20,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "be26b331-bae6-4a20-9919-5798f0418772",
+      "name": "Chips maison",
+      "description": "Chips de pomme de terre maison",
+      "price_cdf": 1200,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/4594fabc-8a7d-43ec-a923-1ef22380b3d9/ec8505d3-486a-4a35-be17-93afd5c6f7be/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "c0cb9998-fef0-4b7b-be36-585ff5b0b35b",
+      "name": "Frites brochettes",
+      "description": "Frites croustillantes et brochettes",
+      "price_cdf": 5500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/8c9a0090-703d-4ba8-a65d-42fc5a607178/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "efc03e9b-6c13-4c29-9f2e-7ee35d07ce76",
+      "name": "Fufu poisson",
+      "description": "Fufu et poisson braisé",
+      "price_cdf": 8500,
+      "is_on_sale": true,
+      "sale_price_cdf": 7500,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/f3f4851c-f543-4266-a2a1-020366c81bc5/main.webp",
+      "preparation_time_minutes": 25,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "3e818c1c-047f-423a-b1d3-5f01e6a728fb",
+      "name": "Haricot riz",
+      "description": "Haricots et riz",
+      "price_cdf": 4000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/597d35d1-7f31-410a-8057-ba83e7df0b1d/2676c22d-51ca-4bdf-bdd6-1848195dd329/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "28c30b6d-37d6-4f10-aacf-553ef3c2b5a6",
+      "name": "Liboké ngulu",
+      "description": "Liboké de porc",
+      "price_cdf": 8000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/7e5559f9-b184-4bac-8879-6cafc1070120/main.webp",
+      "preparation_time_minutes": 25,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "66949f89-f2d9-43c9-bd9c-baec686d7458",
+      "name": "Makemba",
+      "description": "Bananes plantain frites",
+      "price_cdf": 5500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/d0d14f4b-b13a-4238-abe2-d0d692f83579/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "8d30965d-36e7-4e29-93ff-50aa95afa47c",
+      "name": "Menu Burger",
+      "description": "Burger + frites + boisson",
+      "price_cdf": 9500,
+      "is_on_sale": true,
+      "sale_price_cdf": 8500,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/256151c5-4969-4d09-97a2-4982c949d5cb/main.webp",
+      "preparation_time_minutes": 18,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "c416f827-d7dc-43a1-9db5-26d064d18095",
+      "name": "Pizza Pops",
+      "description": "Pizza 4 fromages",
+      "price_cdf": 12000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/8a643d09-2efd-46d8-a22f-98c364598733/main.webp",
+      "preparation_time_minutes": 20,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "e9f5045a-af22-4b1c-88ee-38e70b82a569",
+      "name": "Poisson mayo",
+      "description": "Poisson frit, sauce mayonnaise",
+      "price_cdf": 9500,
+      "is_on_sale": true,
+      "sale_price_cdf": 8500,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/597d35d1-7f31-410a-8057-ba83e7df0b1d/49fc5906-fe04-4711-932d-f5cafaa690ab/main.webp",
+      "preparation_time_minutes": 25,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "94f27364-9b23-4118-8f94-360a188c1bc7",
+      "name": "Pondu riz",
+      "description": "Pondu, riz, poisson fumé",
+      "price_cdf": 7000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/85930aaf-48b2-41b6-9ef0-acee060b7b38/main.webp",
+      "preparation_time_minutes": 20,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "38d20d3f-4d43-499b-a6f4-0dd809ab36de",
+      "name": "Poulet braisé",
+      "description": "Poulet braisé, piment et accompagnement",
+      "price_cdf": 9000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/ad8d30c3-5904-4997-8881-5d5309961e7a/main.webp",
+      "preparation_time_minutes": 25,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "d60e8eaf-eb6c-4050-97fd-3041dab5be33",
+      "name": "Riz poulet",
+      "description": "Riz et poulet sauce tomate",
+      "price_cdf": 6500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/7a213d84-7dad-4fd1-ac65-21d5a847b4e7/main.webp",
+      "preparation_time_minutes": 20,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "f5fcbeda-a624-48b5-b50b-fb414b2b2b25",
+      "name": "Saka-saka",
+      "description": "Saka-saka à la viande",
+      "price_cdf": 6500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/aa049e16-b7c6-4fec-b0f3-0449a38bbd79/813dd1ac-1696-4288-aa29-00792991859b/main.webp",
+      "preparation_time_minutes": 20,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "47087fd2-1f28-4190-ad19-903e84030408",
+      "name": "Salade avocat",
+      "description": "Salade d'avocat frais",
+      "price_cdf": 4000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/ded65b6f-174a-4d61-ba7d-9cb6ffa96b62/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "083effa1-678e-4fbf-a5b7-a31fc0252b4c",
+      "name": "Sandwich poulet",
+      "description": "Sandwich poulet crudités",
+      "price_cdf": 3500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/4594fabc-8a7d-43ec-a923-1ef22380b3d9/8688deac-3913-4bd5-8533-3479a8024fcd/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "17c131fe-160e-4ce9-9b2e-519645911745",
+      "name": "Sandwich thon",
+      "description": "Sandwich au thon",
+      "price_cdf": 3500,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/85a4d359-8ec6-4a98-a320-8eeebe3fbb82/main.webp",
+      "preparation_time_minutes": 10,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "e175bff8-9dbc-4a91-8b4e-e03d378afc2b",
+      "name": "Shawarma poulet",
+      "description": "Shawarma poulet, sauce ail",
+      "price_cdf": 6000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/51a89976-f8f4-4a22-bf33-f9bfe4c7c655/main.webp",
+      "preparation_time_minutes": 12,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "3ea01537-6dd6-4a12-89fd-24568fb6c4b0",
+      "name": "Tacos mixte",
+      "description": "Tacos viande mixte, frites",
+      "price_cdf": 8000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/34af7b7e-f579-430e-87ef-0f3c6976e45c/7e0fef1f-60fe-44db-b6f5-5120e24636f0/main.webp",
+      "preparation_time_minutes": 15,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "c63ee4d9-ac8e-4d4a-bab5-9dc4869f7179",
+      "name": "Thé gingembre",
+      "description": "Thé chaud au gingembre",
+      "price_cdf": 1000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/e5ea3e1c-2c60-4e04-92df-de233a142e60/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "9d0d8bb9-3a02-4981-bab7-613b4fea84ca",
+      "name": "Thé gingembre",
+      "description": "Thé chaud au gingembre",
+      "price_cdf": 1000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/e5ea3e1c-2c60-4e04-92df-de233a142e60/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    },
+    {
+      "id": "ae656740-af4d-4a7b-9034-d68eb4cb0205",
+      "name": "Thé gingembre",
+      "description": "Thé chaud au gingembre",
+      "price_cdf": 1000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/6a04d525-01e8-47fa-9a1b-372a2f0ea62f/e5ea3e1c-2c60-4e04-92df-de233a142e60/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "0586545d-dbbe-45e0-bfc1-3dcd517edcf7",
+      "name": "Yaourt maison",
+      "description": "Yaourt nature maison",
+      "price_cdf": 2000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/5be56d36-9069-4104-8aaa-249a43d6e7af/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Niams"
+      }
+    },
+    {
+      "id": "10f7b1be-f6da-4c75-aa07-34e105471906",
+      "name": "Yaourt maison",
+      "description": "Yaourt nature maison",
+      "price_cdf": 2000,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/e76c7a9f-5e4f-4f2e-8ccb-88894a4a67e6/5be56d36-9069-4104-8aaa-249a43d6e7af/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "Arlo Pops"
+      }
+    },
+    {
+      "id": "9551cd55-55db-4327-b002-e0df611627bf",
+      "name": "Yaourt nature",
+      "description": "Yaourt nature",
+      "price_cdf": 1800,
+      "is_on_sale": false,
+      "sale_price_cdf": null,
+      "image_url": "https://jgwzugusmieandeofyzf.supabase.co/storage/v1/object/public/food-items/4594fabc-8a7d-43ec-a923-1ef22380b3d9/77e938b8-3160-4baa-b4b3-d5f4a891204a/main.webp",
+      "preparation_time_minutes": 5,
+      "merchants": {
+        "business_name": "La Grappe"
+      }
+    }
+  ]
+}
