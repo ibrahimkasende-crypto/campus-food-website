@@ -4,8 +4,8 @@ import { appStoreUrl, googlePlayUrl } from "@/lib/downloads";
 /**
  * Badges de téléchargement (Google Play / App Store).
  *
- * - Lien confirmé (variable d'environnement renseignée) : badge cliquable vers la fiche officielle.
- * - Sinon : badge grisé et « Bientôt disponible » — aucun faux lien, aucune promesse de disponibilité.
+ * - Google Play : badge cliquable vers la fiche officielle (src/lib/downloads.ts).
+ * - App Store : badge cliquable seulement si l'adresse définitive est configurée, sinon « Bientôt disponible ».
  *
  * Les pictogrammes sont des vecteurs fidèles à la mise en page des badges officiels. À la publication, les fichiers
  * officiels fournis par Google et Apple (ressources de marque des programmes développeur) peuvent les remplacer.

@@ -1,7 +1,7 @@
 /**
  * Passerelle site → application. Identifiants réels de l'application Android : paquet `cd.campusfood.app`,
- * lien profond `campusfood://open` (déclaré dans AndroidManifest du projet Client). Aucune adresse de boutique n'est
- * inventée : seules les variables NEXT_PUBLIC_ANDROID_PLAY_URL / NEXT_PUBLIC_IOS_APP_STORE_URL sont utilisées.
+ * lien profond `campusfood://open` (déclaré dans AndroidManifest du projet Client). La fiche Google Play officielle
+ * est dans src/lib/downloads.ts. L'App Store n'est utilisé que si NEXT_PUBLIC_IOS_APP_STORE_URL est renseignée.
  */
 export const ANDROID_PACKAGE = "cd.campusfood.app";
 export const APP_OPEN_SCHEME_URL = "campusfood://open";

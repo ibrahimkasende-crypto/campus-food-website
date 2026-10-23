@@ -1,12 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Smartphone, Sparkles } from "lucide-react";
 import { SectionReveal } from "@/components/animations/SectionReveal";
 import { StoreBadges } from "@/components/ui/StoreBadges";
-import { appStoreUrl, apkUrl, googlePlayUrl } from "@/lib/downloads";
+import { apkUrl, appStoreUrl, googlePlayUrl } from "@/lib/downloads";
 
-/** Barre de téléchargement très visible. Aucun lien de magasin n'est affiché tant qu'il n'est pas confirmé. */
+/** Barre de téléchargement. Le badge Android ouvre la fiche Google Play officielle. */
 export function DownloadSection() {
-  const allLive = !!googlePlayUrl() && !!appStoreUrl();
+  const play = googlePlayUrl();
+  const ios = appStoreUrl();
   const apk = apkUrl();
   return (
     <section id="telecharger" className="py-20 sm:py-28">
@@ -31,10 +33,26 @@ export function DownloadSection() {
 
                 <StoreBadges size="lg" align="start" className="mt-9 justify-center lg:justify-start" />
 
-                {!allLive && (
-                  <p className="mt-8 flex items-center justify-center gap-2 text-sm text-white/70 lg:justify-start">
+                <a
+                  href={play}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-bold text-brand-primary shadow-premium transition hover:scale-[1.02]"
+                >
+                  Télécharger Campus Food
+                </a>
+
+                <p className="mt-6 text-sm text-white/80">
+                  L&apos;application Android est en test fermé.{" "}
+                  <Link href="/telechargement#tester" className="font-bold text-brand-accent underline-offset-4 hover:underline">
+                    Tester Campus Food
+                  </Link>
+                </p>
+
+                {!ios && (
+                  <p className="mt-3 flex items-center justify-center gap-2 text-sm text-white/70 lg:justify-start">
                     <Smartphone className="h-4 w-4 shrink-0" />
-                    Les liens de téléchargement seront publiés ici dès que l&apos;application sera disponible sur les magasins.
+                    L&apos;application iPhone sera indiquée ici dès que sa fiche App Store sera publiée.
                   </p>
                 )}
                 {apk && (
