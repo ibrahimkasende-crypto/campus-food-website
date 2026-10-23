@@ -14,6 +14,7 @@ const navLinks = [
 
 const legalLinks = [
   { href: "/confidentialite", label: "Confidentialité" },
+  { href: "/delete-account", label: "Supprimer mon compte" },
   { href: "/conditions", label: "Conditions d'utilisation" },
   { href: "/mentions-legales", label: "Mentions légales" },
 ];

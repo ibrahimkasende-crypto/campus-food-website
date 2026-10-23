@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --test scripts/countdown.test.mjs scripts/applink.test.mjs"
+    "test": "node --test scripts/countdown.test.mjs scripts/applink.test.mjs scripts/deletion-request.test.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

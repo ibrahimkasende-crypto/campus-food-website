@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LegalPage } from "@/components/layout/LegalPage";
 
 export const metadata: Metadata = {
@@ -109,7 +110,14 @@ export default function PrivacyPage() {
           Les utilisateurs peuvent demander l&apos;accès à leurs données, leur rectification ou leur suppression, ainsi
           que formuler toute question relative à leur traitement, sous réserve des obligations légales applicables.
         </p>
-        <p>Pour exercer ces droits, ils peuvent contacter Campus Food à l&apos;adresse indiquée dans la section « Contact ».</p>
+        <p>
+          Pour exercer ces droits, ils peuvent contacter Campus Food à l&apos;adresse indiquée dans la section « Contact »,
+          ou envoyer une{" "}
+          <Link className="font-bold text-brand-secondary underline" href="/delete-account">
+            demande de suppression de compte
+          </Link>
+          .
+        </p>
       </section>
       <section>
         <h2>8. Mineurs</h2>
