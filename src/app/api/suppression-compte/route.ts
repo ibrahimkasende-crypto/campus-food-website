@@ -7,6 +7,8 @@ export const dynamic = "force-dynamic";
 /**
  * Enregistre une demande de suppression. Ne supprime aucun compte.
  * La clé utilisée est la clé publique Supabase : la base n'autorise que l'insertion.
+ * Si la colonne app ou le droit INSERT (app) manque, la demande n'est pas
+ * enregistrée et aucun succès n'est renvoyé.
  * Le message de confirmation n'est renvoyé qu'après un enregistrement confirmé (HTTP 201).
  */
 
@@ -73,7 +75,7 @@ export async function POST(req: Request) {
 
   if (tooMany(clientKey(req))) return fail(429, "Trop de demandes. Réessayez dans quelques minutes.");
 
-  const { ok, errors, clean } = validateDeletionRequest(str(body.contact), str(body.message));
+  const { ok, errors, clean } = validateDeletionRequest(str(body.contact), str(body.message), str(body.app));
   if (!ok) return fail(422, "Veuillez corriger les champs indiqués.", errors);
 
   const url = process.env.SUPABASE_URL?.trim();
@@ -93,6 +95,7 @@ export async function POST(req: Request) {
         Prefer: "return=minimal",
       },
       body: JSON.stringify({
+        app: clean.app,
         contact: clean.contact,
         contact_kind: clean.contactKind,
         message: clean.message || null,
@@ -106,6 +109,10 @@ export async function POST(req: Request) {
     }
     const detail = (await res.json().catch(() => ({}))) as { code?: string; message?: string };
     if (detail.code === "P0001" && detail.message) return fail(429, detail.message);
+    if (detail.code === "PGRST204" || detail.code === "42703" || detail.code === "42501") {
+      console.error("[suppression-compte] schéma ou droit insuffisant", res.status, detail.code);
+      return fail(503, "Le service ne peut pas encore enregistrer l'application choisie. Votre demande n'a pas été enregistrée.");
+    }
     console.error("[suppression-compte] refus de la base", res.status, detail.code);
     return fail(502, "Votre demande n'a pas pu être enregistrée. Merci de réessayer.");
   } catch (e) {

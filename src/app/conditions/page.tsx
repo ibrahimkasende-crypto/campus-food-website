@@ -22,7 +22,7 @@ export default function TermsPage() {
         <h2>Commandes et paiement</h2>
         <ul>
           <li>Les prix et la disponibilité sont ceux affichés par les restaurants au moment de la commande.</li>
-          <li>Le paiement se fait par Mobile Money, en espèces à la livraison ou par portefeuille Campus Food, selon les modes proposés.</li>
+          <li>Les commandes actuelles se paient en espèces.</li>
           <li>Une commande n&apos;est considérée comme livrée qu&apos;après la confirmation du paiement.</li>
           <li>Les annulations et remboursements suivent les règles affichées dans l&apos;application (<em>détail à confirmer</em>).</li>
         </ul>

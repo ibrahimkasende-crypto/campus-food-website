@@ -2,12 +2,19 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { validateDeletionRequest, type DeletionErrors } from "@/lib/deletionRequest";
+import { DELETION_APPS, validateDeletionRequest, type DeletionApp, type DeletionErrors } from "@/lib/deletionRequest";
 
 const inputClass =
   "w-full rounded-xl border border-brand-primary/15 bg-white px-4 py-3 text-sm text-brand-primary placeholder:text-brand-muted/60 outline-none transition focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/15 disabled:opacity-60 aria-[invalid=true]:border-red-400";
 
-export function DeleteAccountForm() {
+const appLabel: Record<DeletionApp, string> = {
+  client: "Client",
+  driver: "Livreur",
+  pro: "Pro",
+};
+
+export function DeleteAccountForm({ initialApp }: { initialApp: DeletionApp }) {
+  const [app, setApp] = useState<DeletionApp>(initialApp);
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -21,12 +28,13 @@ export function DeleteAccountForm() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (busy || inFlight.current) return;
-    const check = validateDeletionRequest(contact, message);
+    const check = validateDeletionRequest(contact, message, app);
     if (!check.ok) {
       setErrors(check.errors);
       setStatus("idle");
       setFeedback("");
-      document.getElementById(check.errors.contact ? "delete-contact" : "delete-message")?.focus();
+      const focusId = check.errors.app ? "delete-app-client" : check.errors.contact ? "delete-contact" : "delete-message";
+      document.getElementById(focusId)?.focus();
       return;
     }
     inFlight.current = true;
@@ -37,6 +45,7 @@ export function DeleteAccountForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          app: check.clean.app,
           contact: check.clean.contact,
           message: check.clean.message,
           website: honeypot,
@@ -67,9 +76,8 @@ export function DeleteAccountForm() {
         <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-600" aria-hidden />
         <h2 className="mt-4 text-2xl font-extrabold text-brand-primary">Demande bien reçue</h2>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-muted">
-          Votre demande de suppression est enregistrée. Le compte n&apos;est pas encore supprimé : Campus Food doit
-          d&apos;abord vérifier que vous en êtes le titulaire, puis vous recontactera sur le numéro ou l&apos;adresse
-          indiqués.
+          Votre demande est enregistrée. Le compte n&apos;est pas encore supprimé. Campus Food doit d&apos;abord vérifier
+          que vous en êtes le titulaire.
         </p>
       </div>
     );
@@ -82,7 +90,31 @@ export function DeleteAccountForm() {
         <input id="delete-website" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
       </div>
 
-      <div>
+      <fieldset>
+        <legend className="text-sm font-bold text-brand-primary">Application</legend>
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          {DELETION_APPS.map((value) => (
+            <label key={value} className="flex cursor-pointer items-center gap-2 rounded-xl border border-brand-primary/15 px-3 py-3 text-sm font-semibold text-brand-primary has-[:checked]:border-brand-secondary has-[:checked]:bg-brand-background">
+              <input
+                id={value === "client" ? "delete-app-client" : undefined}
+                type="radio"
+                name="app"
+                value={value}
+                checked={app === value}
+                disabled={busy}
+                onChange={() => {
+                  setApp(value);
+                  if (errors.app) setErrors((s) => ({ ...s, app: "" }));
+                }}
+              />
+              {appLabel[value]}
+            </label>
+          ))}
+        </div>
+        {errors.app ? <p className="mt-2 text-sm font-semibold text-red-600">{errors.app}</p> : null}
+      </fieldset>
+
+      <div className="mt-5">
         <label htmlFor="delete-contact" className="text-sm font-bold text-brand-primary">
           Numéro de téléphone ou adresse e-mail du compte
         </label>

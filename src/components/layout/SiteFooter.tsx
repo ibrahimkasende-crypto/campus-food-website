@@ -14,7 +14,11 @@ const navLinks = [
 
 const legalLinks = [
   { href: "/confidentialite", label: "Confidentialité" },
+  { href: "/confidentialite/livreur", label: "Confidentialité Livreur" },
+  { href: "/confidentialite/pro", label: "Confidentialité Pro" },
   { href: "/delete-account", label: "Supprimer mon compte" },
+  { href: "/delete-account/livreur", label: "Supprimer un compte Livreur" },
+  { href: "/delete-account/pro", label: "Supprimer un compte Pro" },
   { href: "/conditions", label: "Conditions d'utilisation" },
   { href: "/mentions-legales", label: "Mentions légales" },
 ];

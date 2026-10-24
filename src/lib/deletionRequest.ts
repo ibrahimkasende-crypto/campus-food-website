@@ -4,15 +4,24 @@
  * un numéro ou un e-mail ne prouve pas l'identité et ne déclenche aucune suppression.
  */
 
-export type DeletionErrors = Partial<Record<"contact" | "message", string>>;
+export const DELETION_APPS = ["client", "driver", "pro"] as const;
+
+export type DeletionApp = (typeof DELETION_APPS)[number];
+
+export type DeletionErrors = Partial<Record<"app" | "contact" | "message", string>>;
 
 export type DeletionClean = {
+  app: DeletionApp;
   contact: string;
   contactKind: "phone" | "email";
   message: string;
 };
 
 const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+export function isDeletionApp(value: string): value is DeletionApp {
+  return (DELETION_APPS as readonly string[]).includes(value);
+}
 
 /** Même règle que les demandes de partenariat : 00243…, 0XXXXXXXXX national, espaces ignorés. */
 function normalizePhone(raw: string): string {
@@ -22,7 +31,11 @@ function normalizePhone(raw: string): string {
   return /^\+?\d{8,15}$/.test(v) ? v : "";
 }
 
-export function validateDeletionRequest(contactRaw: string, messageRaw: string): {
+export function validateDeletionRequest(
+  contactRaw: string,
+  messageRaw: string,
+  appRaw: string,
+): {
   ok: boolean;
   errors: DeletionErrors;
   clean: DeletionClean;
@@ -30,8 +43,13 @@ export function validateDeletionRequest(contactRaw: string, messageRaw: string):
   const errors: DeletionErrors = {};
   const typed = contactRaw.trim();
   const message = messageRaw.trim().replace(/\s+/g, " ");
+  const app = isDeletionApp(appRaw) ? appRaw : "client";
   let contact = "";
   let contactKind: "phone" | "email" = "phone";
+
+  if (!isDeletionApp(appRaw)) {
+    errors.app = "Indiquez l'application : Client, Livreur ou Pro.";
+  }
 
   if (!typed) {
     errors.contact = "Indiquez le numéro de téléphone ou l'adresse e-mail du compte.";
@@ -51,6 +69,6 @@ export function validateDeletionRequest(contactRaw: string, messageRaw: string):
   return {
     ok: Object.keys(errors).length === 0,
     errors,
-    clean: { contact, contactKind, message },
+    clean: { app, contact, contactKind, message },
   };
 }
