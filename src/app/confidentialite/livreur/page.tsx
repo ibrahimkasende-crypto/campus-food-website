@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage } from "@/components/layout/LegalPage";
 import { PrivacyHub } from "@/components/legal/PrivacyHub";
-import { privacyUpdated } from "@/lib/privacyApps";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité — Livreur",
@@ -15,7 +14,7 @@ export default function DriverPrivacyPage() {
     <LegalPage
       title="Politique de confidentialité — Livreur"
       subtitle="Application Campus Food Livreur, pour les livreurs validés par Campus Food."
-      updated={privacyUpdated}
+      updated="7 novembre 2026"
       provisional={false}
     >
       <PrivacyHub current="driver" />
@@ -60,18 +59,44 @@ export default function DriverPrivacyPage() {
         </p>
       </section>
       <section>
-        <h2>5. Conservation et fermeture</h2>
+        <h2>5. Demande de suppression et conservation des données</h2>
+        <p>Le livreur peut demander la suppression de son compte directement depuis l&apos;application Campus Food Livreur, dans la rubrique :</p>
         <p>
-          Les courses et les écritures d&apos;espèces peuvent devoir être conservées pour la comptabilité et la prévention de
-          la fraude. Aucune durée chiffrée n&apos;est fixée.
+          <strong>Profil → Paramètres → Confidentialité et sécurité → Demander la suppression de mon compte.</strong>
         </p>
         <p>
-          La fermeture du compte n&apos;est pas automatique : une demande sur{" "}
+          Après confirmation, la demande est transmise à l&apos;administration de Campus Food pour examen. Le compte reste
+          actif pendant cet examen.
+        </p>
+        <p>
+          <strong>Vérifications préalables.</strong> Avant de procéder à la suppression définitive, l&apos;administration
+          peut vérifier les éléments nécessaires à la clôture de la relation avec le livreur, notamment :
+        </p>
+        <ul>
+          <li>les livraisons et commandes encore en cours ;</li>
+          <li>les espèces encaissées qui doivent être reversées à Campus Food ;</li>
+          <li>le solde du portefeuille et les rémunérations non réglées ;</li>
+          <li>les retraits et versements en attente ;</li>
+          <li>les éventuelles obligations opérationnelles ou contractuelles restantes.</li>
+        </ul>
+        <p>Si une régularisation est nécessaire, le livreur est informé des éléments à résoudre et du statut de sa demande.</p>
+        <p>
+          <strong>Traitement de la demande.</strong> Après vérification et approbation, le compte est supprimé ou ses
+          données personnelles sont anonymisées, selon les obligations applicables.
+        </p>
+        <p>
+          Les données personnelles qui ne sont plus nécessaires sont supprimées. Certaines informations relatives aux
+          commandes, livraisons, paiements et opérations comptables peuvent être conservées lorsqu&apos;elles sont
+          nécessaires à la comptabilité, à la prévention de la fraude ou au respect d&apos;obligations légales. Aucune durée
+          chiffrée n&apos;est fixée. Les durées restent à confirmer.
+        </p>
+        <p>Le livreur est informé de l&apos;évolution de sa demande et de son traitement.</p>
+        <p>
+          Une demande envoyée depuis{" "}
           <Link className="font-bold text-brand-secondary underline" href="/delete-account/livreur">
             la page Livreur
           </Link>{" "}
-          est examinée manuellement, notamment lorsqu&apos;il reste des espèces à reverser ou un historique de courses. Le
-          mécanisme actuel ne ferme pas un compte livreur.
+          est également examinée. Ce formulaire enregistre la demande. Il ne ferme pas le compte à lui seul.
         </p>
       </section>
       <section>

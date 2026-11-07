@@ -27,9 +27,10 @@ const copy: Record<
     title: "Demande de suppression de compte — Livreur",
     subtitle: "Application Campus Food Livreur. Cette page enregistre une demande. Elle ne supprime pas le compte.",
     steps: [
-      "Vous indiquez l'application Livreur, puis le téléphone ou l'e-mail du compte.",
-      "Campus Food vérifie que vous êtes le titulaire, en vous recontactant sur ce moyen.",
-      "Le compte livreur n'est pas fermé automatiquement. La demande est examinée manuellement, notamment s'il reste des espèces à reverser ou un historique de courses. Aucune date n'est garantie.",
+      "Dans l'application : Profil, puis Paramètres, puis Confidentialité et sécurité, puis Demander la suppression de mon compte.",
+      "Vous pouvez aussi indiquer l'application Livreur sur cette page, avec le téléphone ou l'e-mail du compte. Ce formulaire enregistre la demande. Il ne ferme pas le compte à lui seul.",
+      "Campus Food examine la demande. Le compte reste actif pendant cet examen. Les livraisons en cours, les espèces à reverser, le portefeuille, les rémunérations et les opérations en attente peuvent être vérifiés.",
+      "Après approbation, le compte est supprimé ou ses données personnelles sont anonymisées. Aucune durée chiffrée n'est fixée. Les durées restent à confirmer.",
     ],
     data: "Celles de la politique Livreur. Les courses et les écritures d'espèces peuvent être conservées pour la comptabilité et la fraude. Aucune durée chiffrée n'est fixée.",
     privacyHref: "/confidentialite/livreur",
