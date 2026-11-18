@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Smartphone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { SectionReveal } from "@/components/animations/SectionReveal";
-import { androidTestJoinUrl, apkUrl, appStoreUrl, closedTestOptInUrl, googlePlayUrl } from "@/lib/downloads";
+import { androidTestJoinUrl, apkUrl, closedTestOptInUrl, googlePlayUrl } from "@/lib/downloads";
 
 export const metadata: Metadata = {
   title: "Télécharger Campus Food",
@@ -18,13 +16,12 @@ export default function TelechargementPage() {
   const optIn = closedTestOptInUrl();
   const join = androidTestJoinUrl();
   const apk = apkUrl();
-  const ios = appStoreUrl();
 
   return (
     <>
       <PageHero
         title="Télécharger Campus Food"
-        subtitle="L'application Android est disponible en test fermé sur Google Play. L'iPhone suivra lorsque sa fiche sera publiée."
+        subtitle="L'application Android est disponible en test fermé sur Google Play. L'application iPhone est disponible sur l'App Store."
       />
 
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
@@ -39,12 +36,6 @@ export default function TelechargementPage() {
             >
               Télécharger l&apos;application Android
             </a>
-            {!ios && (
-              <p className="mx-auto mt-8 flex max-w-md items-start justify-center gap-2 text-sm text-brand-muted">
-                <Smartphone className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" />
-                L&apos;application iPhone sera indiquée ici dès que sa fiche App Store sera publiée.
-              </p>
-            )}
             {apk && (
               <a
                 href={apk}
@@ -95,13 +86,6 @@ export default function TelechargementPage() {
               </p>
             )}
           </section>
-
-          <p className="mt-12 text-center text-sm text-brand-muted">
-            Le grand lancement a lieu le vendredi 23 octobre 2026.{" "}
-            <Link href="/#lancement" className="font-bold text-brand-primary underline-offset-4 hover:underline">
-              Voir les détails
-            </Link>
-          </p>
         </SectionReveal>
       </div>
     </>

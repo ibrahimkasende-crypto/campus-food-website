@@ -13,7 +13,11 @@ export const dynamic = "force-dynamic";
  * qu'après la confirmation de la base.
  */
 
-const MAX_BODY_BYTES = 10_000;
+// Limite relevée pour accueillir la photo facultative (base64) de la candidature livreur ; les autres
+// types de demande n'envoient jamais une telle charge et restent protégés par la limite par champ (1500
+// caractères, appliquée par le déclencheur SQL) quelle que soit la taille autorisée ici.
+const MAX_BODY_BYTES = 7_000_000;
+const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
 const MIN_FILL_MS = 2500;
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
@@ -94,6 +98,15 @@ export async function POST(req: Request) {
     return fail(503, "Le service de demandes est momentanément indisponible. Merci de réessayer plus tard.");
   }
 
+  // Photo facultative (candidature livreur uniquement) : base64 data URL, vérifiée par sa signature réelle
+  // (jamais par l'extension ou l'en-tête déclarés), puis envoyée au stockage privé avant l'insertion de la ligne.
+  let photoPath: string | undefined;
+  if (type === "driver" && typeof body.photo === "string" && body.photo.trim()) {
+    const photoResult = await uploadDriverPhoto(url, key, body.photo.trim());
+    if (!photoResult.ok) return fail(422, photoResult.message);
+    photoPath = photoResult.path;
+  }
+
   try {
     const res = await fetch(`${url.replace(/\/$/, "")}/rest/v1/partner_requests`, {
       method: "POST",
@@ -103,7 +116,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         Prefer: "return=minimal",
       },
-      body: JSON.stringify(toRow(type, clean)),
+      body: JSON.stringify(toRow(type, photoPath ? { ...clean, photoPath } : clean)),
       signal: AbortSignal.timeout(10_000),
       cache: "no-store",
     });
@@ -124,4 +137,56 @@ export async function POST(req: Request) {
 
 export function GET() {
   return new NextResponse(null, { status: 405, headers: { Allow: "POST" } });
+}
+
+/** Signature réelle des premiers octets : l'extension ou l'en-tête déclaré par le navigateur ne prouvent rien. */
+function detectImageType(bytes: Uint8Array): { ext: string; contentType: string } | null {
+  const starts = (sig: number[], offset = 0) => sig.every((b, i) => bytes[offset + i] === b);
+  if (starts([0xff, 0xd8, 0xff])) return { ext: "jpg", contentType: "image/jpeg" };
+  if (starts([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])) return { ext: "png", contentType: "image/png" };
+  if (starts([0x52, 0x49, 0x46, 0x46]) && starts([0x57, 0x45, 0x42, 0x50], 8)) return { ext: "webp", contentType: "image/webp" };
+  return null;
+}
+
+/**
+ * Envoie la photo (data URL base64) dans le bucket privé `driver-applications`, avec la clé publique : seule
+ * l'écriture anonyme y est autorisée (RLS), jamais la lecture — la photo ne peut être relue que par l'équipe
+ * Campus Food, depuis Desktop Admin, via une adresse signée temporaire.
+ */
+async function uploadDriverPhoto(
+  supabaseUrl: string,
+  publishableKey: string,
+  dataUrl: string
+): Promise<{ ok: true; path: string } | { ok: false; message: string }> {
+  const match = /^data:image\/[a-z+]+;base64,([a-zA-Z0-9+/=]+)$/.exec(dataUrl);
+  if (!match) return { ok: false, message: "Photo invalide." };
+  let bytes: Buffer;
+  try {
+    bytes = Buffer.from(match[1], "base64");
+  } catch {
+    return { ok: false, message: "Photo illisible." };
+  }
+  if (bytes.length === 0 || bytes.length > MAX_PHOTO_BYTES) {
+    return { ok: false, message: `Photo trop lourde (${(bytes.length / 1048576).toFixed(1)} Mo) : 5 Mo maximum.` };
+  }
+  const kind = detectImageType(bytes);
+  if (!kind) return { ok: false, message: "Format de photo non accepté : JPEG, PNG ou WebP uniquement." };
+
+  const path = `driver-applications/${crypto.randomUUID()}.${kind.ext}`;
+  try {
+    const res = await fetch(`${supabaseUrl.replace(/\/$/, "")}/storage/v1/object/${path}`, {
+      method: "POST",
+      headers: { apikey: publishableKey, Authorization: `Bearer ${publishableKey}`, "Content-Type": kind.contentType },
+      body: new Blob([new Uint8Array(bytes)], { type: kind.contentType }),
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!res.ok) {
+      console.error("[partenaires] envoi photo refusé", res.status);
+      return { ok: false, message: "La photo n'a pas pu être envoyée. Réessayez ou poursuivez sans photo." };
+    }
+    return { ok: true, path };
+  } catch (e) {
+    console.error("[partenaires] erreur réseau photo", e instanceof Error ? e.name : "inconnue");
+    return { ok: false, message: "La photo n'a pas pu être envoyée. Réessayez ou poursuivez sans photo." };
+  }
 }

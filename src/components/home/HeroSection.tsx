@@ -59,13 +59,9 @@ export function HeroSection() {
           <PremiumButton href="/commander" icon={<ArrowRight className="h-4 w-4" />}>
             Commander un plat
           </PremiumButton>
-          <PremiumButton href="#lancement" variant="outline">
-            Le grand lancement
-          </PremiumButton>
           <PremiumButton href="/telechargement" variant="outline">
             Télécharger l&apos;application
           </PremiumButton>
-          
         </motion.div>
 
         <motion.div

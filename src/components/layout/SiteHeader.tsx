@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LaunchCountdown } from "@/components/layout/LaunchCountdown";
 import { CampusLogo } from "@/components/brand/CampusLogo";
 import { cn } from "@/lib/utils";
 
@@ -17,13 +16,12 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-export function SiteHeader({ initialNow }: { initialNow: number }) {
+export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-brand-primary/10">
-      <LaunchCountdown initialNow={initialNow} />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:h-[4.5rem]">
         <CampusLogo size="sm" />
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: "fr_CD",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: [{ url: "/lancement/affiche-lancement.jpg", width: 1559, height: 2000, alt: "Affiche du grand lancement de Campus Food" }],
+    images: [{ url: "/logo-icone-app.jpg", width: 1254, height: 1254, alt: site.name }],
   },
   twitter: { card: "summary_large_image", title: `${site.name} — ${site.tagline}`, description: site.description },
   // icônes : src/app/favicon.ico, icon.png et apple-icon.png (détectées automatiquement) + manifest.ts
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${poppins.variable} min-h-screen font-sans antialiased`}>
-        <SiteHeader initialNow={Date.now()} />
+        <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
       </body>

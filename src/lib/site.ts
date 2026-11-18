@@ -50,24 +50,6 @@ export function socialLinks(): SocialLink[] {
     .map(([label, href]) => ({ label, href: href!.trim() }));
 }
 
-/** Lancement officiel — informations de l'affiche officielle. */
-export const launchEvent = {
-  title: "Le grand lancement de Campus Food",
-  dateLabel: "Vendredi 23 octobre 2026",
-  timeLabel: "À partir de 9 h 30",
-  place: "Salle AUF — Université de Kinshasa",
-  placeDetail: "Réf. Equity BCDC et la Bibliothèque Centrale",
-  /** 23 octobre 2026, 9 h 30, heure de Kinshasa (UTC+1). */
-  startsAtIso: "2026-10-23T09:30:00+01:00",
-  poster: {
-    preview: "/lancement/affiche-lancement.webp",
-    full: "/lancement/affiche-lancement.jpg",
-    width: 1559,
-    height: 2000,
-    alt: "Affiche officielle du grand lancement de Campus Food, vendredi 23 octobre 2026 à partir de 9 h 30, Salle AUF de l'Université de Kinshasa",
-  },
-} as const;
-
 /** Restaurants partenaires officiels (UNIKIN). Aucun menu, tarif ni coordonnée n'est affiché ici. */
 export const officialPartners = [
   {

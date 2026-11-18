@@ -66,24 +66,14 @@ export const forms: Record<JoinType, FormDef> = {
   driver: {
     type: "driver",
     tab: "Livreur",
-    title: "Devenir livreur partenaire",
-    intro: "Vous souhaitez effectuer des livraisons sur le campus ? Aucune pièce d'identité n'est demandée à ce stade : les vérifications se feront plus tard, de manière sécurisée.",
-    submit: "Envoyer ma candidature de livreur",
+    title: "Devenir livreur Campus Food",
+    intro: "Une candidature simple et rapide. Elle n'est pas une création de compte : notre équipe vous contacte après examen de votre dossier.",
+    submit: "Envoyer ma candidature",
     fields: [
       { key: "fullName", label: "Nom complet", kind: "text", required: true, min: 2, max: 120, wide: true, autoComplete: "name" },
       phone,
-      email(false),
-      { key: "zone", label: "Zone de disponibilité", kind: "text", required: true, min: 2, max: 200, placeholder: "Ex. UNIKIN, Mont-Amba", wide: true },
-      {
-        key: "transport", label: "Moyen de déplacement", kind: "select", required: true, max: 30,
-        options: [
-          { value: "moto", label: "Moto" }, { value: "velo", label: "Vélo" }, { value: "a_pied", label: "À pied" },
-          { value: "voiture", label: "Voiture" }, { value: "autre", label: "Autre" },
-        ],
-      },
-      { key: "availability", label: "Disponibilité habituelle", kind: "text", required: true, min: 2, max: 200, placeholder: "Ex. Soirs et week-ends" },
-      { key: "experience", label: "Expérience de livraison", kind: "textarea", required: false, max: 600, wide: true },
-      message,
+      email(true),
+      { key: "address", label: "Adresse ou quartier de résidence", kind: "text", required: true, min: 3, max: 300, wide: true, placeholder: "Ex. Lemba, près de l'UNIKIN", autoComplete: "street-address" },
     ],
   },
   institution: {
@@ -111,6 +101,16 @@ export const forms: Record<JoinType, FormDef> = {
     ],
   },
 };
+
+/** Conditions de recrutement affichées avant l'envoi de la candidature livreur. */
+export const driverConditions: string[] = [
+  "Être disponible tous les jours de 08 h 00 à 18 h 00.",
+  "Habiter à proximité de l'Université de Kinshasa (UNIKIN).",
+  "Posséder au moins un téléphone Android et savoir l'utiliser.",
+  "Bien connaître l'environnement universitaire de Kinshasa.",
+  "Avoir au moins 18 ans.",
+  "Savoir communiquer, être courtois, gentil et honnête.",
+];
 
 export type JoinValues = Record<string, string>;
 export type JoinErrors = Record<string, string>;
@@ -162,7 +162,7 @@ export function toRow(type: JoinType, v: JoinValues): Record<string, unknown> {
     };
   }
   if (type === "driver") {
-    return { ...base, details: { zone: v.zone, transport: v.transport, availability: v.availability, experience: v.experience || undefined } };
+    return { ...base, address: v.address, message: null, details: v.photoPath ? { photo_path: v.photoPath } : {} };
   }
   return {
     ...base,

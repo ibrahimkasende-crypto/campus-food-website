@@ -2,7 +2,8 @@
  * Liens de téléchargement officiels.
  *
  * Fiche Android confirmée : https://play.google.com/store/apps/details?id=cd.campusfood.app
- * L'App Store et l'APK restent vides tant que leur adresse définitive n'est pas fournie.
+ * Fiche App Store confirmée (RDC) : https://apps.apple.com/cd/app/campus-food/id6829912350
+ * L'APK reste vide tant que son adresse définitive n'est pas fournie.
  *
  * Test fermé — où ajouter le lien d'inscription donné par Google Play Console :
  * 1. variable d'environnement NEXT_PUBLIC_ANDROID_CLOSED_TEST_URL (lue au build, prioritaire) ;
@@ -19,6 +20,9 @@ function clean(value: string | undefined): string | null {
 export const GOOGLE_PLAY_LISTING_URL =
   "https://play.google.com/store/apps/details?id=cd.campusfood.app";
 
+/** Fiche App Store officielle de l'application Client (id6829912350), RDC. */
+export const APP_STORE_LISTING_URL = "https://apps.apple.com/cd/app/campus-food/id6829912350";
+
 /**
  * Lien d'inscription au test fermé. Laisser vide jusqu'à l'adresse Play Console.
  * Exemple d'emplacement : Play Console → Test → Test fermé → lien d'adhésion.
@@ -30,9 +34,9 @@ export function googlePlayUrl(): string {
   return clean(process.env.NEXT_PUBLIC_ANDROID_PLAY_URL) ?? GOOGLE_PLAY_LISTING_URL;
 }
 
-/** Fiche App Store, seulement si l'adresse définitive est configurée. */
-export function appStoreUrl(): string | null {
-  return clean(process.env.NEXT_PUBLIC_IOS_APP_STORE_URL);
+/** Fiche App Store. Une variable d'environnement https remplace l'adresse officielle. */
+export function appStoreUrl(): string {
+  return clean(process.env.NEXT_PUBLIC_IOS_APP_STORE_URL) ?? APP_STORE_LISTING_URL;
 }
 
 /** Installation directe Android (APK), optionnelle et distincte du badge Google Play. */
