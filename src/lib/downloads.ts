@@ -2,7 +2,7 @@
  * Liens de téléchargement officiels.
  *
  * Fiche Android confirmée : https://play.google.com/store/apps/details?id=cd.campusfood.app
- * Fiche App Store confirmée (RDC) : https://apps.apple.com/cd/app/campus-food/id6829912350
+ * Fiche App Store confirmée : https://apps.apple.com/ch/app/campus-food/id6829912350
  * L'APK reste vide tant que son adresse définitive n'est pas fournie.
  *
  * Test fermé — où ajouter le lien d'inscription donné par Google Play Console :
@@ -20,8 +20,8 @@ function clean(value: string | undefined): string | null {
 export const GOOGLE_PLAY_LISTING_URL =
   "https://play.google.com/store/apps/details?id=cd.campusfood.app";
 
-/** Fiche App Store officielle de l'application Client (id6829912350), RDC. */
-export const APP_STORE_LISTING_URL = "https://apps.apple.com/cd/app/campus-food/id6829912350";
+/** Fiche App Store officielle de l'application Client (id6829912350). */
+export const APP_STORE_LISTING_URL = "https://apps.apple.com/ch/app/campus-food/id6829912350";
 
 /**
  * Lien d'inscription au test fermé. Laisser vide jusqu'à l'adresse Play Console.

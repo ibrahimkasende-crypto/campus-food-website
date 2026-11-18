@@ -104,7 +104,7 @@ export const forms: Record<JoinType, FormDef> = {
 
 /** Conditions de recrutement affichées avant l'envoi de la candidature livreur. */
 export const driverConditions: string[] = [
-  "Être disponible tous les jours de 08 h 00 à 18 h 00.",
+  "Être disponible du lundi au samedi, de 08 h 00 à 18 h 00.",
   "Habiter à proximité de l'Université de Kinshasa (UNIKIN).",
   "Posséder au moins un téléphone Android et savoir l'utiliser.",
   "Bien connaître l'environnement universitaire de Kinshasa.",

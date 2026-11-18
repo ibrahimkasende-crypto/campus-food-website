@@ -73,4 +73,11 @@ export const officialPartners = [
     height: 600,
     alt: "Logo du restaurant Resto Collectif Niam's",
   },
+  {
+    name: "Smile Bites",
+    logo: "/partenaires/smile-bites.png",
+    width: 1494,
+    height: 1304,
+    alt: "Enseigne du restaurant Smile Bites — Eat with a smile",
+  },
 ] as const;
