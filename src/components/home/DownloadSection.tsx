@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Smartphone, Sparkles } from "lucide-react";
 import { SectionReveal } from "@/components/animations/SectionReveal";
 import { StoreBadges } from "@/components/ui/StoreBadges";
@@ -41,13 +40,6 @@ export function DownloadSection() {
                 >
                   Télécharger Campus Food
                 </a>
-
-                <p className="mt-6 text-sm text-white/80">
-                  L&apos;application Android est en test fermé.{" "}
-                  <Link href="/telechargement#tester" className="font-bold text-brand-accent underline-offset-4 hover:underline">
-                    Tester Campus Food
-                  </Link>
-                </p>
 
                 {!ios && (
                   <p className="mt-3 flex items-center justify-center gap-2 text-sm text-white/70 lg:justify-start">

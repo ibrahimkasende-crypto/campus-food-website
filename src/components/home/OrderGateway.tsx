@@ -69,8 +69,7 @@ export function OrderGateway({ playUrl, appStoreUrl, downloadUrl }: Props) {
             <Loader2 className="h-5 w-5 animate-spin" /> Ouverture de Campus Food…
           </p>
           <p className="mx-auto mt-3 max-w-md text-sm text-brand-muted">
-            Si l&apos;application n&apos;est pas installée, vous serez dirigé vers Google Play. Elle est en test fermé :
-            rejoignez d&apos;abord le programme depuis la page de téléchargement.
+            Si l&apos;application n&apos;est pas installée, vous serez dirigé vers Google Play.
           </p>
           <a
             href={intent}
